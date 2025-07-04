@@ -1,39 +1,40 @@
-import antfu from '@antfu/eslint-config';
+import antfu from "@antfu/eslint-config";
 
 // @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs';
+import withNuxt from "./.nuxt/eslint.config.mjs";
 
 export default withNuxt(
   antfu(
     {
-      type: 'app',
+      type: "app",
       vue: true,
       typescript: true,
       stylistic: {
         indent: 2,
         semi: true,
-        quotes: 'single',
+        quotes: "double",
       },
+      ignores: [".pnpm-store/**"],
     },
 
     {
       rules: {
-        'ts/consistent-type-definitions': ['error', 'type'],
-        'no-console': ['warn'],
-        'antfu/no-top-level-await': ['off'],
-        'node/prefer-global/process': ['off'],
-        'node/no-process-env': ['error'],
-        'perfectionist/sort-imports': [
-          'error',
+        "ts/consistent-type-definitions": ["error", "type"],
+        "no-console": ["warn"],
+        "antfu/no-top-level-await": ["off"],
+        "node/prefer-global/process": ["off"],
+        "node/no-process-env": ["error"],
+        "perfectionist/sort-imports": [
+          "error",
           {
-            tsconfigRootDir: '.',
+            tsconfigRootDir: ".",
           },
         ],
-        'unicorn/filename-case': [
-          'error',
+        "unicorn/filename-case": [
+          "error",
           {
-            case: 'kebabCase',
-            ignore: ['README.md'],
+            case: "kebabCase",
+            ignore: ["README.md"],
           },
         ],
       },
