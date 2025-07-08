@@ -8,10 +8,7 @@
         <p class="py-6">
           This is a travel log app. It's a simple app that allows you to log your travels.
         </p>
-        <button class="btn btn-accent">
-          Sign In With GitHub
-          <Icon name="tabler:brand-github" size="22" />
-        </button>
+        <AuthButton />
       </div>
     </div>
   </div>
