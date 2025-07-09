@@ -8,18 +8,25 @@ on:
 jobs:
   migrate:
     runs-on: ubuntu-latest
+    environment: Build
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22.x
+          cache: pnpm
 
       - name: Install dependencies
-        run: npm install
+        run: pnpm install
 
       - name: Run Drizzle Migrations
         env:
